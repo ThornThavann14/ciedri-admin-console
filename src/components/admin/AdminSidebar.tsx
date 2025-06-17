@@ -12,7 +12,6 @@ import {
   BarChart3,
   MapPin,
   FileBarChart,
-  Settings,
   Globe
 } from "lucide-react";
 import {
@@ -51,10 +50,11 @@ const sidebarItems = [
 ];
 
 export const AdminSidebar = ({ activeSection, onSectionChange }: AdminSidebarProps) => {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
+  const isCollapsed = state === "collapsed";
 
   return (
-    <Sidebar className={collapsed ? "w-16" : "w-64"} collapsible>
+    <Sidebar collapsible="icon">
       <SidebarTrigger className="m-2 self-end" />
       
       <div className="p-4 border-b">
@@ -62,7 +62,7 @@ export const AdminSidebar = ({ activeSection, onSectionChange }: AdminSidebarPro
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">C</span>
           </div>
-          {!collapsed && (
+          {!isCollapsed && (
             <div>
               <h2 className="font-bold text-lg text-blue-600">CIEDRI</h2>
               <p className="text-xs text-gray-500">Admin Panel</p>
@@ -87,7 +87,7 @@ export const AdminSidebar = ({ activeSection, onSectionChange }: AdminSidebarPro
                       className="flex items-center gap-3 w-full"
                     >
                       <item.icon className="h-4 w-4" />
-                      {!collapsed && <span>{item.label}</span>}
+                      {!isCollapsed && <span>{item.label}</span>}
                     </button>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

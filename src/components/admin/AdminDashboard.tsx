@@ -10,6 +10,13 @@ import { FooterManager } from "./content/FooterManager";
 import { ContactManager } from "./content/ContactManager";
 import { AboutManager } from "./content/AboutManager";
 import { HeaderManager } from "./content/HeaderManager";
+import { NewsCardsManager } from "./content/NewsCardsManager";
+import { PolicyCardsManager } from "./content/PolicyCardsManager";
+import { TrendsCardsManager } from "./content/TrendsCardsManager";
+import { ThinkTankManager } from "./content/ThinkTankManager";
+import { RoundtableManager } from "./content/RoundtableManager";
+import { IndustryReportsManager } from "./content/IndustryReportsManager";
+import { IndustrialParkMapManager } from "./content/IndustrialParkMapManager";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const AdminDashboard = () => {
@@ -36,6 +43,20 @@ export const AdminDashboard = () => {
         return <FooterManager />;
       case "contact":
         return <ContactManager />;
+      case "news-cards":
+        return <NewsCardsManager />;
+      case "policy-cards":
+        return <PolicyCardsManager />;
+      case "trends-cards":
+        return <TrendsCardsManager />;
+      case "think-tank":
+        return <ThinkTankManager />;
+      case "roundtable":
+        return <RoundtableManager />;
+      case "industry-reports":
+        return <IndustryReportsManager />;
+      case "industrial-park-map":
+        return <IndustrialParkMapManager />;
       default:
         return <DashboardHome />;
     }
